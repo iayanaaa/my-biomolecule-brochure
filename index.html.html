@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Biomolecule Brochure</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #333333;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .minecraft-btn {
+            background-color: #559900;
+            border: 3px solid #333333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        .minecraft-btn:hover {
+            background-color: #77BB00;
+        }
+        .page {
+            display: none;
+            background-color: #555555;
+            border: 4px solid #222222;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .active-page {
+            display: block;
+        }
+        h1, h2 {
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            border-bottom: 2px solid #559900;
+            padding-bottom: 10px;
+        }
+        .pixel-art {
+            image-rendering: pixelated;
+            margin: 15px 0;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted white;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .fact-block {
+            background-color: #444444;
+            border-left: 4px solid #559900;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .biomolecule-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; font-size: 24px;">🧪 BIOMOLECULE BROCHURE 🧪</h1>
+        <h2 style="text-align: center; font-size: 18px;">MINECRAFT EDITION</h2>
+
+        <div class="biomolecule-selector">
+            <button class="minecraft-btn" onclick="selectBiomolecule('carbs')">Carbohydrates</button>
+            <button class="minecraft-btn" onclick="selectBiomolecule('proteins')">Proteins</button>
+            <button class="minecraft-btn" onclick="selectBiomolecule('lipids')">Lipids</button>
+            <button class="minecraft-btn" onclick="selectBiomolecule('nucleic')">Nucleic Acids</button>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="minecraft-btn" onclick="showPage('structure')">Structure</button>
+            <button class="minecraft-btn" onclick="showPage('functions')">Functions</button>
+            <button class="minecraft-btn" onclick="showPage('examples')">Examples</button>
+            <button class="minecraft-btn" onclick="showPage('facts')">Facts</button>
+        </div>
+
+        <!-- CARBOHYDRATES -->
+        <div id="carbs-structure" class="page">
+            <h2>CARBOHYDRATES: BASIC STRUCTURE</h2>
+            <p>Carbohydrates are made of <strong>building blocks called monosaccharides</strong>, similar to Minecraft blocks!</p>
+            <div style="text-align: center;">
+                <div style="background-color: #333333; padding: 20px; display: inline-block;">
+                    <div style="display: flex; justify-content: center;">
+                        <div style="width: 50px; height: 50px; background-color: #FF0000; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">C</div>
+                        <div style="width: 50px; height: 50px; background-color: #00FF00; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">H</div>
+                        <div style="width: 50px; height: 50px; background-color: #0000FF; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">O</div>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Elements Involved:</strong> Carbon (C), Hydrogen (H), and Oxygen (O)</p>
+            <p><strong>Formula:</strong> C<sub>n</sub>H<sub>2n</sub>O<sub>n</sub> (in simple sugars)</p>
+            <p>Carbohydrates can be simple (like sugar) or complex (like starch), just like how Minecraft has simple blocks and complex structures!</p>
+        </div>
+
+        <div id="carbs-functions" class="page">
+            <h2>CARBOHYDRATES: MAIN FUNCTIONS</h2>
+            <ul>
+                <li>Primary energy source for the body (like coal and redstone in Minecraft)</li>
+                <li>Store energy for later use</li>
+                <li>Provide structure in plants (like cellulose)</li>
+                <li>Help with communication between cells</li>
+            </ul>
+            <div class="fact-block">
+                <p>Just as coal powers your Minecraft furnace, glucose powers your body's cells!</p>
+            </div>
+        </div>
+
+        <div id="carbs-examples" class="page">
+            <h2>CARBOHYDRATES: FOOD SOURCES</h2>
+            <p>You can find carbohydrates in these Minecraft-like food sources:</p>
+            <ul>
+                <li>Bread 🍞 (like Minecraft bread)</li>
+                <li>Potatoes 🥔 (like Minecraft potatoes)</li>
+                <li>Fruits 🍎 (like Minecraft apples)</li>
+                <li>Rice and grains (like Minecraft wheat)</li>
+                <li>Sugar 🧂 (like Minecraft sugar)</li>
+            </ul>
+        </div>
+
+        <div id="carbs-facts" class="page">
+            <h2>CARBOHYDRATES: INTERESTING FACTS</h2>
+            <div class="fact-block">
+                <p>Carbohydrates make up about 80% of a plant's dry weight!</p>
+            </div>
+            <div class="fact-block">
+                <p>Your brain needs about 130 grams of carbohydrates each day to function properly.</p>
+            </div>
+            <div class="fact-block">
+                <p>Fiber is a type of carbohydrate your body can't digest, but it helps your digestive system work properly!</p>
+            </div>
+            <h3>Why They're Important</h3>
+            <p>Carbohydrates are essential for life because they provide the quick energy needed for all cellular activities. Without them, your body would be like a Minecraft character with an empty hunger bar!</p>
+        </div>
+
+        <!-- PROTEINS -->
+        <div id="proteins-structure" class="page">
+            <h2>PROTEINS: BASIC STRUCTURE</h2>
+            <p>Proteins are made of <strong>amino acid chains</strong>, like a complex redstone circuit in Minecraft!</p>
+            <div style="text-align: center;">
+                <div style="background-color: #333333; padding: 20px; display: inline-block;">
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+                        <div style="width: 50px; height: 50px; background-color: #FF0000; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">C</div>
+                        <div style="width: 50px; height: 50px; background-color: #00FF00; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">H</div>
+                        <div style="width: 50px; height: 50px; background-color: #0000FF; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">O</div>
+                        <div style="width: 50px; height: 50px; background-color: #FFFF00; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">N</div>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Elements Involved:</strong> Carbon (C), Hydrogen (H), Oxygen (O), Nitrogen (N), and sometimes Sulfur (S)</p>
+            <p>Proteins fold into complex 3D shapes that determine their function, just like how complex Minecraft builds have a specific purpose!</p>
+        </div>
+
+        <div id="proteins-functions" class="page">
+            <h2>PROTEINS: MAIN FUNCTIONS</h2>
+            <ul>
+                <li>Build and repair body tissues (like repairing your tools in Minecraft)</li>
+                <li>Form enzymes that speed up chemical reactions</li>
+                <li>Transport molecules throughout the body</li>
+                <li>Help with immune function (like fighting off creepers!)</li>
+                <li>Provide structure to cells and tissues</li>
+            </ul>
+            <div class="fact-block">
+                <p>Proteins do thousands of different jobs in your body, like a multi-purpose tool!</p>
+            </div>
+        </div>
+
+        <div id="proteins-examples" class="page">
+            <h2>PROTEINS: FOOD SOURCES</h2>
+            <p>You can find proteins in these Minecraft-like food sources:</p>
+            <ul>
+                <li>Meat 🥩 (like Minecraft steak and porkchop)</li>
+                <li>Fish 🐟 (like Minecraft cod and salmon)</li>
+                <li>Eggs 🥚 (not in Minecraft, but imagine!)</li>
+                <li>Beans (like cocoa beans in Minecraft)</li>
+                <li>Nuts and seeds</li>
+            </ul>
+        </div>
+
+        <div id="proteins-facts" class="page">
+            <h2>PROTEINS: INTERESTING FACTS</h2>
+            <div class="fact-block">
+                <p>There are about 20,000 different proteins in your body!</p>
+            </div>
+            <div class="fact-block">
+                <p>Proteins can be denatured (lose their shape) with heat, just like how ice melts in Minecraft when placed near light sources!</p>
+            </div>
+            <div class="fact-block">
+                <p>Hemoglobin, a protein in your blood, carries oxygen throughout your body.</p>
+            </div>
+            <h3>Why They're Important</h3>
+            <p>Without proteins, your body couldn't build or repair itself. They're like the crafting table of your body, essential for creating and fixing everything!</p>
+        </div>
+
+        <!-- LIPIDS -->
+        <div id="lipids-structure" class="page">
+            <h2>LIPIDS: BASIC STRUCTURE</h2>
+            <p>Lipids are a diverse group including fats, oils, and waxes that don't dissolve in water, like how oil and water separate in Minecraft!</p>
+            <div style="text-align: center;">
+                <div style="background-color: #333333; padding: 20px; display: inline-block;">
+                    <div style="display: flex; justify-content: center;">
+                        <div style="width: 50px; height: 50px; background-color: #FF0000; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">C</div>
+                        <div style="width: 50px; height: 50px; background-color: #00FF00; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">H</div>
+                        <div style="width: 50px; height: 50px; background-color: #0000FF; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">O</div>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Elements Involved:</strong> Mostly Carbon (C) and Hydrogen (H), with some Oxygen (O)</p>
+            <p>Most lipids have many carbon-hydrogen bonds, which store lots of energy, like how TNT stores explosive power in Minecraft!</p>
+        </div>
+
+        <div id="lipids-functions" class="page">
+            <h2>LIPIDS: MAIN FUNCTIONS</h2>
+            <ul>
+                <li>Store energy long-term (like a chest full of valuable items)</li>
+                <li>Insulate the body and maintain temperature (like wool blocks)</li>
+                <li>Form cell membranes (like the walls of your Minecraft house)</li>
+                <li>Help absorb certain vitamins (A, D, E, K)</li>
+                <li>Produce hormones that send signals in the body</li>
+            </ul>
+            <div class="fact-block">
+                <p>Lipids store more than twice the energy of carbohydrates per gram!</p>
+            </div>
+        </div>
+
+        <div id="lipids-examples" class="page">
+            <h2>LIPIDS: FOOD SOURCES</h2>
+            <p>You can find lipids in these Minecraft-like food sources:</p>
+            <ul>
+                <li>Oils (like from seeds)</li>
+                <li>Butter (from milk, which exists in Minecraft)</li>
+                <li>Fatty meats 🥩 (like Minecraft porkchops)</li>
+                <li>Nuts and seeds</li>
+                <li>Avocados</li>
+            </ul>
+        </div>
+
+        <div id="lipids-facts" class="page">
+            <h2>LIPIDS: INTERESTING FACTS</h2>
+            <div class="fact-block">
+                <p>Your brain is about 60% fat, showing how important lipids are for nervous system function!</p>
+            </div>
+            <div class="fact-block">
+                <p>Lipids help form the myelin sheath that protects nerve cells, like armor protects you in Minecraft!</p>
+            </div>
+            <div class="fact-block">
+                <p>Cholesterol, a type of lipid, is essential for making vitamin D and hormones.</p>
+            </div>
+            <h3>Why They're Important</h3>
+            <p>Lipids are vital for energy storage, cell structure, and protection. They're like the diamond armor of biomolecules - providing protection and durability to your body!</p>
+        </div>
+
+        <!-- NUCLEIC ACIDS -->
+        <div id="nucleic-structure" class="page">
+            <h2>NUCLEIC ACIDS: BASIC STRUCTURE</h2>
+            <p>Nucleic acids (DNA and RNA) contain the genetic instructions for life, like the command blocks in Minecraft!</p>
+            <div style="text-align: center;">
+                <div style="background-color: #333333; padding: 20px; display: inline-block;">
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+                        <div style="width: 50px; height: 50px; background-color: #FF0000; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">C</div>
+                        <div style="width: 50px; height: 50px; background-color: #00FF00; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">H</div>
+                        <div style="width: 50px; height: 50px; background-color: #0000FF; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">O</div>
+                        <div style="width: 50px; height: 50px; background-color: #FFFF00; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">N</div>
+                        <div style="width: 50px; height: 50px; background-color: #FF00FF; margin: 5px; text-align: center; line-height: 50px; font-weight: bold;">P</div>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Elements Involved:</strong> Carbon (C), Hydrogen (H), Oxygen (O), Nitrogen (N), and Phosphorus (P)</p>
+            <p>Nucleic acids are made of nucleotides, which contain a sugar, a phosphate group, and a nitrogenous base (A, T, G, C in DNA).</p>
+        </div>
+
+        <div id="nucleic-functions" class="page">
+            <h2>NUCLEIC ACIDS: MAIN FUNCTIONS</h2>
+            <ul>
+                <li>Store genetic information (like a redstone memory circuit)</li>
+                <li>Pass genetic traits to offspring</li>
+                <li>Direct protein synthesis</li>
+                <li>Control all cellular activities</li>
+            </ul>
+            <div class="fact-block">
+                <p>DNA is like the master blueprint for all the builds in your body!</p>
+            </div>
+        </div>
+
+        <div id="nucleic-examples" class="page">
+            <h2>NUCLEIC ACIDS: WHERE TO FIND THEM</h2>
+            <p>Unlike other biomolecules, we don't typically eat nucleic acids for nutrition. They are found:</p>
+            <ul>
+                <li>In every cell of your body</li>
+                <li>In cells of all living things</li>
+                <li>In some viruses</li>
+            </ul>
+            <p>When we eat foods with cells (virtually everything!), we consume some nucleic acids, but they're broken down during digestion.</p>
+        </div>
+
+        <div id="nucleic-facts" class="page">
+            <h2>NUCLEIC ACIDS: INTERESTING FACTS</h2>
+            <div class="fact-block">
+                <p>If you stretched out all the DNA in your body, it would reach to the moon and back about 8,000 times!</p>
+            </div>
+            <div class="fact-block">
+                <p>DNA has a double helix structure, like a twisted ladder!</p>
+            </div>
+            <div class="fact-block">
+                <p>Your DNA sequence is 99.9% identical to every other human but that 0.1% difference makes you unique!</p>
+            </div>
+            <h3>Why They're Important</h3>
+            <p>Nucleic acids are essential because they contain the instructions for building and operating every living thing. They're like the command blocks and redstone circuits of life!</p>
+        </div>
+
+        <script>
+            let currentBiomolecule = 'carbs';
+            let currentPage = 'structure';
+
+            function selectBiomolecule(biomolecule) {
+                currentBiomolecule = biomolecule;
+                showPage(currentPage);
+            }
+
+            function showPage(page) {
+                currentPage = page;
+                
+                // Hide all pages
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(p => {
+                    p.classList.remove('active-page');
+                });
+                
+                // Show the selected page for the current biomolecule
+                const selectedPage = document.getElementById(`${currentBiomolecule}-${page}`);
+                if (selectedPage) {
+                    selectedPage.classList.add('active-page');
+                }
+            }
+
+            // Initialize with carbohydrates structure
+            window.onload = function() {
+                showPage('structure');
+            };
+        </script>
+    </div>
+</body>
+</html>
